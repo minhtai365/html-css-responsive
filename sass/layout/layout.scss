@@ -1,0 +1,18 @@
+
+@mixin respon($breakpoint) {
+    @if $breakpoint ==phone{
+        @media(max-width: 600px){@content};
+    }
+    @if $breakpoint==tab-port{
+        @media(max-width: 900px){@content};
+    }
+    @if $breakpoint==tab-land{
+        @media(max-width: 1200px){@content};
+    }
+    @if $breakpoint==big-destop{
+        @media(min-width: 1800px){@content};
+    }
+    @else{
+        @media(max-width: $breakpoint){@content};
+    }
+}

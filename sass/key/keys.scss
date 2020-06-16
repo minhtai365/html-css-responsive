@@ -1,0 +1,16 @@
+$height-button:40px;
+$ellipse:ellipse(85% 63% at 50% 1%);
+@mixin clearfix {
+    &::after{
+        content: "";
+        clear: both;
+    }
+}
+@mixin center { 
+    position: relative;
+    //margin: 0 auto;    
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

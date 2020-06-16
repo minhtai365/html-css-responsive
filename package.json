@@ -1,0 +1,14 @@
+{
+  "name": "hoc-css-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sasstocss": "node-sass sass/main.scss --watch css/main.css"
+  },
+  "author": "MinhTai",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
