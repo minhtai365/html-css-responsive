@@ -8,6 +8,7 @@
 
 /*css main*/
 
+
 .header{
     background-image:linear-gradient(to right bottom,rgba(255, 255, 255,0.3),rgba(170, 170, 123,0.3)),
      url(../img/background.jpg);
@@ -18,6 +19,9 @@
     /* clip-path: ellipse(55% 40% at 50% 11%); */
     position: relative;
     animation: to-bottom 2s;
+    @include respon(tab-port){
+        width: 100%;
+    }
 
     &__logo-box{
         position: absolute;
@@ -43,6 +47,9 @@
         @include respon(tab-land){
             padding-top:120px ;
         }
+        @include respon(300px){
+            max-width: 90%;
+        }
        
        
         &__main{
@@ -59,6 +66,10 @@
             @include respon(phone){
                 font-size: 25px;
             }
+            @include respon(300px){
+                font-size: 20px;
+                letter-spacing:5px;
+            }
         }
         &__sub{
             color: rgb(238, 57, 87);
@@ -67,7 +78,10 @@
             margin-bottom: 20px;      
             @include respon(tab-port){
                 font-size: 25px;
-            }              
+            }  
+            @include respon(300px){
+                font-size: 18px;
+            }            
         }
        .trang{
         background: white;
@@ -156,6 +170,12 @@
 .col-1-of-2{
     float: left;
     width: 50%;
+    @include respon(tab-port){
+        width: 100%;
+    }
+    @include respon(300px){
+        height: 300px;
+    }
 }
 
 .container{
@@ -191,8 +211,13 @@
         animation: zoom 1s infinite;
         @include respon(tab-land){
             top: 50px;
-            right: -250px;  
-                 
+            right: -250px;                 
+        }
+        @include respon(tab-port){
+            left: 70px;
+        }
+        @include respon(300px){
+            left: 30px;
         }
     }
     .anh2{
@@ -203,6 +228,16 @@
             top: 20px;
             left: 190px;          
         }
+        @include respon(tab-port){
+            left: -90px;
+        }
+        @include respon(phone){
+            left: 10px;
+        }
+        @include respon(300px){
+            left: 30px;
+            top: 50px;
+        }
     }
     .anh3{        
         top: -40px;
@@ -211,6 +246,13 @@
         @include respon(tab-land){
             top: -20px;
             left: 250px;          
+        }
+        @include respon(tab-port){
+            left: 100px;
+        }
+        @include respon(300px){
+            top: 30px;
+            left: 30px;
         }
     }
     img{
@@ -221,8 +263,9 @@
         border-radius: 0.2px;
         box-shadow: -10px 10px 10px black;
         outline-offset: 3px;
-        @include respon(tab-land){
-           // float: right;            
+        @include respon(300px){
+         width: 140px;     
+         height: 70px;    
         }
        
     }
@@ -268,11 +311,26 @@
         }
     }
     @include respon(tab-port) {
-        height: 1200px;
+        height: 1400px;
         .col-1-of-4{
-            width: 500px;
+            width: 100%;
             margin: 20px auto;
-            height: 200px;
+            height: 250px;
+        }
+    }
+    @include respon(phone){
+        .col-1-of-4{
+            width: 100%;
+            margin: 20px auto;
+            height: 250px;
+        }
+    }
+    @include respon(300px){     
+        height: 1500px;          
+        .col-1-of-4{
+            width: 100%;
+            margin: 20px auto;
+            height: fit-content;
         }
     }
     
@@ -319,9 +377,19 @@
     text-align: center;
     //height: 900px;
     word-wrap: break-word;
-    margin-top: 80px;    
+    margin-top: 80px;  
+    @include respon(tab-port){
+        .col-1-of-3{
+            width: calc(100% - 70px);
+            margin: 10px;
+        }
+    }  
+   
     .row{
      height: 400px;
+     @include respon(tab-port){
+        height: fit-content;
+     }
     }
     .col-1-of-3{
         // height: 285px;
@@ -339,6 +407,13 @@
                 // height: 900px;
                 margin:10px 30% 10px auto;
             }
+            @include respon(phone){
+                width: 100%;
+            }
+            @include respon(300px){
+                width: 100%;
+             }
+           
             .card{              
                 /*perspective: 1px; */
                 position: relative;                
@@ -348,6 +423,21 @@
                     width: 400px;
                     height: 650px;
                     margin:10px auto 10px 30%;
+                }
+                @include respon(tab-port){
+                    width: 90%;
+                    height: 550px;
+                    margin:5% 5%;
+                }
+                @include respon(phone){
+                    width: 90%;
+                    margin:5% 5%;
+                    height: 460px;
+                }
+                @include respon(300px){
+                    width: 100%;
+                    margin:5% 0;
+                    height: 300px;
                 }
                 &__side{            
                     width: 100%;
@@ -395,6 +485,7 @@
         border-bottom: 1px solid black;
     }
 }
+
 .card__back{
     //background-color: chartreuse;
     position: relative;
@@ -409,6 +500,7 @@
     h3{
         margin-top: 30px;
         font-size: 50px;
+       
     }
     .oncard{
         position: absolute;
@@ -417,8 +509,12 @@
         transform: translate(-50%,-50%);
         background: white;
         display: block;
+        @include respon(300px){
+           top: 65%;
+        }
         a{
             text-decoration: none;
+           
         }
     }
     .oncard::after{
@@ -446,13 +542,21 @@
 } 
 .animation{
     position: relative;
-   
+    @include respon(300px){
+        h3{
+            font-size: 20px;
+            letter-spacing: 5px;
+        }
+    }
     &__container{
         max-width: 50%;
         margin: 0 auto;
         @include respon(tab-land){
             max-width: 70%;
             margin: 0 auto;
+        }
+        @include respon(300px){
+            max-width: 90%;
         }
         &--content{
             background: rgb(216, 231, 215);
@@ -461,6 +565,13 @@
             padding: 30px 50px;
             margin-top: 40px;
             box-shadow: 2px,3px,4px,black;
+            @include respon(tab-port){
+                text-align: center;
+             }
+             @include respon(300px){
+                padding: 20px 20px;
+                font-size: 15px;
+            }
             .khungimg{                
                 // border: 1px solid black; 
                
@@ -474,6 +585,19 @@
                 border: 1px solid black; 
                 shape-outside: circle(50% at 50% 50%);
                 border-radius: 100px;
+                @include respon(tab-port){
+                    float: none;
+                    margin-left: 35%;
+                    margin-bottom: 10px;
+                 }
+                 @include respon(phone){
+                    float: none;
+                    margin-left: 30%;
+                    margin-bottom: 10px;
+                 }
+                 @include respon(300px){
+                    margin-left: 30%;
+                }
                 img{
                     position: absolute;
                     width: 100%;
@@ -483,6 +607,7 @@
                     transform: translate(-50%,-50%);
                     border-radius: 100px;
                     transition: all 2s;
+                   
                 }
                 .chitiet{
                     text-align: center;
@@ -513,6 +638,13 @@
     width: 100%;
     height: 500px;
     background: rgb(58, 58, 212);
+    @include respon(300px){
+        h5{
+            font-size: 20px;
+            letter-spacing: 5px !important;
+        }
+        
+    }
     &__cover{
         max-width: 60%;
         overflow: hidden;
@@ -524,6 +656,9 @@
         @include respon(tab-land){
             max-width: 80%;
         }
+        @include respon(300px){
+            max-width: 90%;
+        }
         &--content{
             width: 60%;
             background-color: cornsilk;
@@ -531,6 +666,10 @@
             height: 100%;
             opacity: .8;
             padding: 40px;
+            @include respon(300px){
+                width: 100%;
+                clip-path: none;
+            }
             .nhap{
                 width: 80%;
                 display: block;
@@ -540,6 +679,9 @@
                 margin: 10px 0 5px 0;
                 border: none;
                 border-bottom: 1px solid blue;
+                @include respon(300px){
+                    width: 90%;
+                }
                 &:focus{
                     outline:none;                   
                 }
@@ -583,6 +725,9 @@
                     margin-left: 20%;
                     margin-bottom: 10px;
                 }
+                @include respon(300px){
+                    margin-left: 25%;
+                }
             }
         }
     }
@@ -590,9 +735,14 @@
 .footer{    
     background: black;
     padding: 20px 20%;
-    height: 500px;
-    
+    height: 500px;    
     font-size: 12px;   
+    @include respon(phone){
+        text-align: center;
+     }
+     @include respon(300px){
+        padding: 20px 5%;
+    }
     .logo__box{
        // margin-top: 50px;
         text-align: center;
@@ -606,13 +756,28 @@
         padding-top: 20px;
         display: inline-block;
         border-top: 1px solid white;
+        @include respon(phone){
+            float: none;
+            width: 80%;
+            // text-align: center;
+         }
+         @include respon(300px){
+            width: 100%;
+            display: block;
+        }
         ul{
             color: white;
             list-style: none;
-            
             li{
                 
-                display: inline-block;     
+                display: inline-block; 
+                @include respon(phone){
+                    float: left;
+                 }  
+                 @include respon(300px){
+                    width: 90%/4;
+                    margin-left: 6px;
+                }  
                 &:not(:last-child){
                     margin-right: 19px;
                 }         
@@ -636,6 +801,16 @@
         color: white;
         float: right;
         text-align: justify;
+        @include respon(phone){
+            float: none;
+            width: 80%;
+            margin-left: 10%;
+            margin-top: 5%;
+         }
+         @include respon(300px){
+            width: 100%;
+            margin-left: 0;
+        }
     }
 }
 .showbox{
